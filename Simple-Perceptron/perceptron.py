@@ -50,9 +50,7 @@ print(50 * '-')
 
 y = df.iloc[0:100, 4].values
 y = np.where(y == 'Iris-setosa', -1, 1)
-ength
 X = df.iloc[0:100, [0, 2]].values
-
 
 plt.scatter(X[:50, 0], X[:50, 1],
             color='red', marker='o', label='setosa')
@@ -79,9 +77,7 @@ plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_, marker='o')
 plt.xlabel('Epochs')
 plt.ylabel('Number of misclassifications')
 
-0)
 plt.show()
-
 
 print(50 * '=')
 print('A function for plotting decision regions')
@@ -89,8 +85,6 @@ print(50 * '-')
 
 
 def plot_decision_regions(X, y, classifier, resolution=0.02):
-
-or map
     markers = ('s', 'x', 'o', '^', 'v')
     colors = ('red', 'blue', 'lightgreen', 'gray', 'cyan')
     cmap = ListedColormap(colors[:len(np.unique(y))])
@@ -126,7 +120,6 @@ print(50 * '-')
 
 
 class AdalineGD(object):
-"
     def __init__(self, eta=0.01, n_iter=50):
         self.eta = eta
         self.n_iter = n_iter
@@ -188,7 +181,7 @@ plt.title('Adaline - Gradient Descent')
 plt.xlabel('sepal length [standardized]')
 plt.ylabel('petal length [standardized]')
 plt.legend(loc='upper left')
-0)
+
 plt.show()
 
 plt.plot(range(1, len(ada.cost_) + 1), ada.cost_, marker='o')
@@ -245,12 +238,10 @@ class AdalineSGD(object):
         return X[r], y[r]
 
     def _initialize_weights(self, m):
-       "
         self.w_ = np.zeros(1 + m)
         self.w_initialized = True
 
     def _update_weights(self, xi, target):
-       ""
         output = self.net_input(xi)
         error = (target - output)
         self.w_[1:] += self.eta * xi.dot(error)
@@ -291,4 +282,3 @@ plt.ylabel('Average Cost')
 plt.show()
 
 ada = ada.partial_fit(X_std[0, :], y[0])
-
